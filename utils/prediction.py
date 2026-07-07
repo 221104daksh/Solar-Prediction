@@ -48,7 +48,7 @@ def resolve_model_path(candidates: list[str] | None = None) -> str:
     except Exception as exc:
         logger.exception("Failed to download model")
         raise ModelLoadError(
-            "Unable to download trained model from Google Drive."
+            f"Unable to download trained model from Google Drive: {exc}"
         ) from exc
 
 
